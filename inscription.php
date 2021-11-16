@@ -19,7 +19,7 @@ include ('header.php');
 </header>
 <body>
 
-<form method="POST" action = "index.php">
+<form method="POST" action = "inscription.php">
 
 <p>
     <label for = "login"> Entrez le nom d'utilisateur : </label> 
@@ -41,6 +41,10 @@ include ('header.php');
 </p>
 
 </form>
+
+<?php
+ $encrypted_password = md5($password)
+ ?>
 
 <p> Déjâ inscrit ? <a href="/connexion.php">Connexion</a>
     </p>
