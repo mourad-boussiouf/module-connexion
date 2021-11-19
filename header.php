@@ -4,9 +4,9 @@
 
 <div class="menumoduleconnexion">
 
-    <a href="voyage2.html">Accueil</a>
-    <a href="Connexion.php">Connexion</a>
-    <a href="voyage3.html">Inscription</a>
+    <a href="index.php">Accueil</a>
+    <a href="connexion.php">Connexion</a>
+    <a href="inscription.php">Inscription</a>
 
 </div>
 
