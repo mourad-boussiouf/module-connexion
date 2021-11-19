@@ -39,31 +39,17 @@
 include ('headerprofil.php');
 ?>
 
+<?php
 
-
-<div class="topnav">
-  <a href="#home" class="active"> <?php  if (isset($_SESSION['login'])) {
-      echo 'Connecté en tant que '.$_SESSION['login']; } ?> </a>
-
-  <div id="menuprofil">
-    <a href="#news">Modifier mon profil</a>
-    <a  href = "connexion.php?logout='1'" >Déconnexion</a>
-  </div>
-
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
-<script>
-function myFunction() {
-  var x = document.getElementById("menuprofil");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
+if(isset($_SESSION['login'])){
+   include ('loggedheader.php');
 }
-</script>
+
+?>
+
+
+
+
 <p>
     
 

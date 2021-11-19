@@ -46,7 +46,7 @@ $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password'])
         $nom = $_POST['nom'];
 
      
-    $query = "INSERT INTO utilisateurs (prenom,nom,login,password) VALUES ('$login', '$password' , '$prenom', '$nom' )";
+    $query = "INSERT INTO utilisateurs (login,password,prenom,nom) VALUES ('$login', '$password' , '$prenom', '$nom' )";
     //si les conditions sont remplies, éxécute les insertions SQL à partir des données du formulaire
     $run = mysqli_query($conn, $query) or die(mysqli_error());
 

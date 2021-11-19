@@ -19,12 +19,12 @@ if(isset($_POST['login']) && isset($_POST['password'])){
             session_start();
             if ( $password == 'admin'){
                 $_SESSION['login'] = $login;
-                header ("refresh:1;url=admin.php");
+                header ("refresh:0.1;url=admin.php");
     
             }
             else {
                 $_SESSION['login'] = $login;
-                header ("refresh:1;url=profil.php");
+                header ("refresh:0.1;url=profil.php");
 
             }
          
