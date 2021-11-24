@@ -1,8 +1,8 @@
 
   
   .topnav {
+    background-color: rgb(96, 66, 180);
     overflow: hidden;
-    background-color: #333;
     position: relative;
   }
   
@@ -32,7 +32,7 @@
   }
   
   .active {
-    background-color: #04AA6D;
+    background-color: aqua;
     color: white;
   }
 

@@ -1,29 +1,45 @@
 <?php
+$servername = "127.0.0.1";
+$username = "root";
+$password = "";
+$dbname ="moduleconnexion";
 
-$conn= mysqli_connect("localhost","root","","moduleconnexion");
+
+$conn= mysqli_connect("127.0.0.1","root","","moduleconnexion");
 
 
 if(isset($_POST['login']) && isset($_POST['password'])){
     $login=$_POST['login'];
     $password=$_POST['password'];
-    $sql=mysqli_query ($conn,"SELECT * FROM utilisateurs WHERE login='$login' AND password='$password'");
+    $sql= mysqli_query ($conn,"SELECT * FROM utilisateurs WHERE login='$login' AND password='$password'");
     $res= mysqli_fetch_all($sql); 
     $_SESSION['success'] = "";
+
+
 
     
     if (empty($res)) {
         echo "Votre nom d'utilisateur et/ou votre mot de passe n'est pas reconnu";
     }
      else {
-         if($res[0][4] == $password){
+         if($res[0][1] == $login){
             session_start();
-            if ( $password == 'admin'){
-                $_SESSION['login'] = $login;
+            if ( $login == 'admin'){
+                $_SESSION['login'] = $res[0][1];
+                $_SESSION['nom'] = $res[0][3]; 
+                $_SESSION['id'] = $res[0][0];
+                $_SESSION['prenom'] = $res[0][2];
+                $_SESSION['password'] = $res[0][4];
                 header ("refresh:0.1;url=admin.php");
     
             }
             else {
-                $_SESSION['login'] = $login;
+                $_SESSION['login'] = $res[0][1];
+                $_SESSION['nom'] = $res[0][3]; 
+                $_SESSION['id'] = $res[0][0];
+                $_SESSION['prenom'] = $res[0][2];
+                $_SESSION['password'] = $res[0][4];
+
                 header ("refresh:0.1;url=profil.php");
 
             }
@@ -63,6 +79,9 @@ if(isset($_POST['login']) && isset($_POST['password'])){
     <input type = "submit" value = 'Connexion' name = 'Connexion'/>
 
 </p>
+
+<p> Pas de compte ? <a href="inscription.php">Inscription</a>
+    </p>
 
 
 </form>

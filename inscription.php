@@ -8,7 +8,8 @@ $password = "";
 $dbname ="moduleconnexion";
 
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn= mysqli_connect("127.0.0.1","root","","moduleconnexion");
+
 
 
 //si le bouton "envoyer" est cliqué
@@ -63,7 +64,7 @@ $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password'])
 
     else {
     echo "Tous les champs doivent être remplis"."<br>".
-    "et les mots de passe doivent correspondrent";
+    "et les mots de passe doivent correspondre";
 
 }
 
