@@ -76,6 +76,8 @@ $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password'])
     
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="style.css">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,29 +94,30 @@ include ('header.php');
 
 </header>
 <body>
-
+<main>
+<div class = register>
+<div class = registerform>
 <form method="POST" action = "#">
-
 <p>
     <input type = "text" name = "login" id = "login" placeholder = "Nom d'utilisateur"  /> <br> 
     <input type = "password" name = "password" id = "password" placeholder = 'Mot de passe'  /><br>
     <input type = "password" name = "passwordconfirm" id = "passwordconfirm" placeholder ='Confirmer le mot de passe' /><br>
     <input type = "text" name = "prenom" id = "prenom" placeholder = "Prénom" /><br>
     <input type = "text" name = "nom" id = "nom" placeholder = "Nom" /><br>
-
 </p>
-
+</div>
+<div class = registersubmit>
 <p>
     <input type = "submit" value = 'Envoyer' name = 'Envoyer'/>
-
 </p>
-
 </form>
-
-
+</div>
+<div class = alreadyregister>
 <p> Déjâ inscrit ? <a href="connexion.php">Connexion</a>
     </p>
-
+</div>
+</div>
+</main>
 <footer>
 
 <?php

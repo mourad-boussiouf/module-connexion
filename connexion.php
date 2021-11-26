@@ -8,6 +8,13 @@ $dbname ="moduleconnexion";
 $conn= mysqli_connect("127.0.0.1","root","","moduleconnexion");
 
 
+
+
+
+
+
+
+
 if(isset($_POST['login']) && isset($_POST['password'])){
     $login=$_POST['login'];
     $password=$_POST['password'];
@@ -60,6 +67,7 @@ if(isset($_POST['login']) && isset($_POST['password'])){
 
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="style.css">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,6 +75,29 @@ if(isset($_POST['login']) && isset($_POST['password'])){
     <title>Connexion</title>
 </head>
 <body>
+<header>
+
+<?php
+
+if(isset($_SESSION['login'])){
+    include ('headerlogged.php');
+}
+
+
+
+if(!isset($_SESSION['login'])){
+    include ('header.php');
+}
+
+
+if(isset($_SESSION['login'])){
+   include ('loggedbar.php');
+}
+
+?>
+</header>
+
+<main>
 
 <form method="POST" action = "#">
     
@@ -85,7 +116,12 @@ if(isset($_POST['login']) && isset($_POST['password'])){
 
 
 </form>
-
+</main>
+<footer>
+<?php
+include ('footer.php');
+?>
+</footer>
 </body>
 
 
