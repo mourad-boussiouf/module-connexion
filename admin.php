@@ -50,9 +50,11 @@ include ('loggedbaradmin.php');
 ?>
 
 </header>
+<main>
 
-
-
+<div class = thatareuser> 
+<p> Voici la liste des utilisateurs présent sur le site :  </p>
+</div>
 <?php
 
 
@@ -63,7 +65,7 @@ $res= mysqli_fetch_all($sql);
 
 foreach ($res as $v1) {
     foreach ($v1 as $v2) {
-        echo "$v2"."<br>";
+        echo "<div class = listuser>"."• "."$v2"."<br>"."</div>";
     }
 }
 
@@ -85,7 +87,7 @@ if(isset($_GET['logintomodify'])){
          
 
          else {
-             echo "Entrez le nom d'utiliseur du compte à modifier";
+             echo "<div class = enterlogin>Entrez le nom d'utilisateur du compte à modifier :</div>";
          }
 
 
@@ -137,7 +139,7 @@ if(isset($_POST['changelogin'])) {
 ?>    
 
 
-
+<div class = logintomodify>
 <form method="GET" action = "#">
     
 <p>
@@ -149,14 +151,15 @@ if(isset($_POST['changelogin'])) {
 
 </p>
 </form>
-
+</div>
+<div class = selecteduser>
 <?php 
 
 //affiche l'id et le login de l'utiliseur selectionné pour se repérer
 
 if (isset($_MODIFY['login'])) {
-echo $_MODIFY['login']."<br>";
-echo 'Numero ID :'.$_MODIFY['id'];
+echo "Nom d'utilisateur selectionné : ".$_MODIFY['login']."<br>";
+echo "Numero ID de l'utilisateur sélectionné : ".$_MODIFY['id'];
 }
 
 //changement du nom de l'utilisateur selectionné
@@ -296,7 +299,8 @@ if(isset($_POST['changepassword']) && $_POST['password'] == $_POST['passwordconf
 
 if(isset($_MODIFY)){
 ?>
-
+</div>
+<div class = modifyform>
 <!-- Le formulaire est pré rempli avec les anciennes informations -->
 <form method="POST" action = "admin.php">
 
@@ -314,17 +318,21 @@ if(isset($_MODIFY)){
 <button type = "submit" value = "<?=$_MODIFY['id']?>" name = "changenom">Changer le nom</button>  <br> 
 
 </form>
+</div>
 <?php }?>
 
 
 
+<div class="clear"></div>
+=
 
-
-
+</main>
+<div id="footer">
 <footer>
 <?php
 include ('footer.php');
 ?>
 </footer>
+</div>
 </body>
 </html>

@@ -171,15 +171,7 @@ if(isset($_POST['changenom'])) {
 
 
 
-
-
 ?>
-
-
-
-
-
-
 
 
 
@@ -216,6 +208,7 @@ if(isset($_SESSION['login'])){
 </header>
 
 <main>
+<div class = modifyprofil>
 <p>
 <form method="POST" action = "profil.php">
 
@@ -235,9 +228,13 @@ if(isset($_SESSION['login'])){
 </form>
 
 </p>
+</div>
 </main>
 
 <footer>
+<?php
+include ('footer.php');
+?> 
 </footer>
 </body>
 </html>

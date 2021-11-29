@@ -39,6 +39,27 @@ if(isset($_SESSION['login'])){
 ?>
 </header>
 <main>
+<?php
+if(!isset($_SESSION['login'])){
+   
+echo "<h1>Ton daron fait t'il de la drill ? <br>Connecte toi pour le savoir !<h1>";
+}
+?>
+<div class = andrea>
+<?php
+if(isset($_SESSION['login'])){
+echo "<img src='image/andreadrill.png' class = andreadrill alt='andreaquifaitdladrill'>";
+?>
+</div>
+<div class = sentencesindex>
+<?php
+echo "<div class = darondrill>Bonjour ".$_SESSION['login'].
+" les analyses sont formelles,<br>ton daron il fait de la drill gros !</div>";
+}
+?>
+</div>
+
+
 
 </main>
 

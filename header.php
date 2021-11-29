@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="style.css">
 
 <div class="menumoduleconnexion">
-
+    
     <a href="index.php">Accueil</a>
     <a href="connexion.php">Connexion</a>
     <a href="inscription.php">Inscription</a>

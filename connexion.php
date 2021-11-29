@@ -26,7 +26,7 @@ if(isset($_POST['login']) && isset($_POST['password'])){
 
     
     if (empty($res)) {
-        echo "Votre nom d'utilisateur et/ou votre mot de passe n'est pas reconnu";
+        echo "<div class=topmessagebad> ⚠️Votre nom d'utilisateur et/ou votre mot de passe n'est pas reconnu⚠️</div>";
     }
      else {
          if($res[0][1] == $login){
@@ -53,7 +53,8 @@ if(isset($_POST['login']) && isset($_POST['password'])){
          
      }
          else {
-             echo "Votre nom d'utilisateur et/ou votre mot de passe n'est pas reconnu";
+             echo "<div class=topmessagebad> ⚠️
+             Votre nom d'utilisateur et/ou votre mot de passe n'est pas reconnu⚠️</div>";
          }
 }
 }
@@ -98,22 +99,24 @@ if(isset($_SESSION['login'])){
 </header>
 
 <main>
-
+<div class = connection>
 <form method="POST" action = "#">
-    
+<div class = connectionform>
 <p>
     <input type = "text" name = "login" id = "login" placeholder = "Nom d'utilisateur"  /> <br> 
     <input type = "password" name = "password" id = "password" placeholder = 'Mot de passe'  /><br>
 </p>
-
+</div>
+<div class = connectionsubmit>
 <p>
     <input type = "submit" value = 'Connexion' name = 'Connexion'/>
-
 </p>
-
+</div>
+<div class = registerinvite>
 <p> Pas de compte ? <a href="inscription.php">Inscription</a>
     </p>
-
+</div>
+</div>
 
 </form>
 </main>

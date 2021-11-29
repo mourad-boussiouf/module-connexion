@@ -52,8 +52,8 @@ $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password'])
     $run = mysqli_query($conn, $query) or die(mysqli_error());
 
     if($run) {
-     echo "Inscription bien enrengistrée,"."<br>"."vous allez être rediriger vers la page de connexion";
-     header ("refresh:2;url=connexion.php");
+     echo "<div class=topmessagegood>Inscription bien enrengistrée,"."vous allez être rediriger vers la page de connexion</div>";
+     header ("refresh:3;url=connexion.php");
     }
 
     else {
@@ -63,9 +63,8 @@ $password = mysqli_real_escape_string($conn,htmlspecialchars($_POST['password'])
     }
 
     else {
-    echo "Tous les champs doivent être remplis"."<br>".
-    "et les mots de passe doivent correspondre";
-
+    echo "<div class=topmessagebad> ⚠️ Tous les champs doivent être remplis
+    et les mots de passe doivent correspondre ⚠️</div>"    ; 
 }
 
 }
@@ -108,7 +107,7 @@ include ('header.php');
 </div>
 <div class = registersubmit>
 <p>
-    <input type = "submit" value = 'Envoyer' name = 'Envoyer'/>
+    <input type = "submit" value = "S'inscrire" name = 'Envoyer'/>
 </p>
 </form>
 </div>
