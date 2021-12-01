@@ -1,7 +1,5 @@
 <?php
 
-// connexion au serveur local phpmyadmin
-
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -9,6 +7,13 @@ $dbname ="moduleconnexion";
 
 
 $conn= mysqli_connect("127.0.0.1","root","","moduleconnexion");
+
+
+// connexion au serveur local phpmyadmin
+
+
+
+/* include('connection.php'); */
 
 
 
